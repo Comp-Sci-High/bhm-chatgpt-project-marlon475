@@ -1,0 +1,185 @@
+<!--https://chatgpt.com/share/67c67822-7898-800d-8bf0-d2c3a7cc6d59-->
+<!--https://chatgpt.com/share/67c68862-3344-800d-8f7e-83f6e6f4d0ef-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Navbar styles */
+        .navbar {
+            background-color: #81d4fa; /* Odd Future blue */
+            padding: 8px 20px; /* Make navbar thinner */
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .navbar-logo {
+            width: 90px; /* Set logo size */
+            height: auto;
+        }
+
+        /* Body and general styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffafd8;
+            color: #000;
+            text-align: center;
+            margin: 0;
+            padding-top: 70px; /* Added space to prevent navbar from covering text */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #81d4fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .card-content {
+            flex-grow: 1;
+        }
+
+        .member-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #fdd835;
+            padding: 12px 25px;
+            color: #000;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn:hover::before {
+            width: 0%;
+            height: 0%;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Advanced Animation for Text */
+        .description {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transform: translateY(-20px);
+            transition: opacity 1s ease, transform 0.5s ease-in-out, max-height 0.5s ease-in-out;
+        }
+
+        .description.show {
+            display: block;
+            opacity: 1;
+            max-height: 500px;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="https://logos-world.net/wp-content/uploads/2023/03/ODD-Future-Emblem.png" alt="Logo" class="navbar-logo">
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Impact</h1>
+        <div class="card">
+            <img src="https://wp.dailybruin.com/images/2024/11/B.jpg" alt="Tyler, The Creator">
+            <div class="card-content">
+                <div class="member-name">Tyler, The Creator</div>
+                <button class="btn" onclick="toggleDescription('tyler')">See Impact</button>
+                <p id="tyler" class="description">Tyler, The Creator, revolutionized hip-hop with his bold production and unapologetic individuality. His influence on black culture extends to fashion, entrepreneurship, and the empowerment of young black creatives.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://cdn.musicboard.app/musicboard/media/eMzZaJem5qYMatYpzBAe9aSDqHtM0KO5ojxRgyJXoB6c8tkopTXb5azXzmv1NgQf.webp" alt="Earl Sweatshirt">
+            <div class="card-content">
+                <div class="member-name">Earl Sweatshirt</div>
+                <button class="btn" onclick="toggleDescription('earl')">See Impact</button>
+                <p id="earl" class="description">Earl Sweatshirt's intricate lyricism and introspective storytelling reshaped underground hip-hop. His work has inspired a wave of artists focused on raw, emotional expression within black culture.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://beenhere.org/wp-content/uploads/2018/02/ocean-frank-2017.jpg" alt="Frank Ocean">
+            <div class="card-content">
+                <div class="member-name">Frank Ocean</div>
+                <button class="btn" onclick="toggleDescription('frank')">See Impact</button>
+                <p id="frank" class="description">Frank Ocean redefined R&B and hip-hop with his genre-blending sound and deeply personal narratives. His open embrace of identity and emotions challenged norms and reshaped discussions on black artistry.</p>
+            </div>
+        </div>
+        <script>
+            function toggleDescription(id) {
+                var desc = document.getElementById(id);
+                if (desc.classList.contains("show")) {
+                    desc.classList.remove("show");
+                } else {
+                    desc.classList.add("show");
+                }
+            }
+        </script>
+        <a href="index.html" class="btn">Back to Odd Future</a>
+    </div>
+</body>
+</html>
